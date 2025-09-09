@@ -1,4 +1,4 @@
-## Basic Structure of HTML, Elements & Tags
+## Notes
 
 - HTML is the structure, CSS is the appearance, and JavaScript is what allows interactivity
 - All HTML pages must start with `<!DOCTYPE html>`

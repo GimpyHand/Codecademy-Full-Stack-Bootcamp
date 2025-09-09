@@ -2,15 +2,18 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>New User Setup</title>
+        <link rel="stylesheet" href="CSS/styles.css">
+        <title>Jessup's Jerky</title>
     </head>
     <body>
         <nav>
-            <a href="Class1.html">Class 1</a>
-            <a href="Class2.html">Class 2</a>
-            <a href="Class3.html">Class 3</a>
+            <a href="https://jessupsjerky.ca/">Home</a>
+            <a href="https://jessupsjerky.ca/products">Products</a>
+            <a href="https://jessupsjerky.ca/news">News</a>
+            <a href="https://jessupsjerky.ca/cart">Cart</a>
         </nav>
-        <h2>New User Creation Request</h2>
+        <img src="images/Logo.png">
+        <h2>New Employee Creation Request</h2>
         <h3>Please fill in the following information</h3>
         <form>
             <table>
@@ -25,12 +28,12 @@
                 <tr>
                     <td>Department:</td>
                     <td><select name="Department">
+                            <option>Executive</option>
                             <option>Head Office</option>
-                            <option>Aerospace</option>
-                            <option>Agriculture</option>
-                            <option>Plating</option>
-                            <option>Finance</option>
+                            <option>HR</option>
                             <option>IT</option>
+                            <option>Kitchen</option>
+                            <option>Production</option>
                             <option>Sales</option>
                         </select>
                     </td>
@@ -41,22 +44,22 @@
                 </tr>
                 <tr>
                     <td rowspan="6">Requirements:</td>
-                    <td><input type="checkbox" name="Email Required" checked> Email</td>
+                    <td><input type="checkbox" name="Email" checked> Email</td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" name="Team Required" checked> Teams</td>
+                    <td><input type="checkbox" name="Teams" checked> Teams</td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" name="VS Code Required"> VS Code</td>
+                    <td><input type="checkbox" name="VS_Code"> VS Code</td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" name="Salesforce Required"> Salesforce</td>
+                    <td><input type="checkbox" name="Salesforce"> Salesforce</td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" name="ERP Required"> ERP</td>
+                    <td><input type="checkbox" name="ERP"> ERP</td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" name="Quantum Required"> Quantum</td>
+                    <td><input type="checkbox" name="Laptop"> Laptop</td>
                 </tr>
                 <tr>
                     <td>Signed Contract:</td>
@@ -66,14 +69,13 @@
                     <td>Additional Info:</td>
                     <td><textarea rows="5" maxlength="280"></textarea></td>
                 </tr>
-                <tr>
-                    <td><input type="submit" name="Submit"></td>
-                    <td><input type="reset" name="Reset"></td>
-                </tr>
             </table>
             <br>
-            <br>
+            <div class="button-group">
+            <input type="submit" name="Submit">
+            <input type="reset" name="Reset">
+            </div>
         </form>
-        <center><footer>Made by <a href="https://github.com/gimpyhand" target="_blank">Alex</a> in 15 minutes</footer></center>
+        <footer>Made by <a href="https://github.com/gimpyhand" target="_blank">Alex</a> in 30 minutes</footer>
     </body>
 </html>

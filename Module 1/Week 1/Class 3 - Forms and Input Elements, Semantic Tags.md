@@ -1,4 +1,4 @@
-## Forms and Input Elements, Semantic Tags
+## Notes
 - **Videos** are added with the `<video>` tag
 - You can open an email using `<a href="mailto:email@email.com">Send an Email</>`
 - There are *2* types of Tags

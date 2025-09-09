@@ -1,4 +1,4 @@
-## Attributes, Lists, Links, Images, and Tables
+## Notes
 - **Lists** come in 2 varieties, ordered and unordered
 	- `<ol>` and `<ul>`
 	- Each item in the lists require a `<li>` tag
