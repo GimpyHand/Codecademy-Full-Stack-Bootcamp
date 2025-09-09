@@ -1,24 +1,52 @@
-h1 {
-    
+nav {
+    display: flex;
+    justify-content: center; /* centers items horizontally */
+    gap: 50px;               /* space between items */
+    background-color: rgb(218, 218, 218);
+    font-size: 20px;
+    font-weight: 500;
 }
 
 h2 {
-    
+    margin: 0;
+    text-align: center
 }
 
 h3 {
-    
+    margin: 0 0 5 0;
+    text-align: center
 }
 
 a {
-    
+    color: rgb(214, 0, 0);
 }
 
-p {
-    
+body {
+    background: url("https://cadorath.com/wp-content/themes/blankslate-child/images/grey_swooshes-large.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 table {
-    border: solid;
-    
+    border: 5px solid rgb(214, 0, 0, 0.5);
+    padding: 10px;
+    background-color: rgb(240, 240, 240, .7);
+    border-radius: 15px;
+    margin: 0 auto;
+}
+
+footer {
+    text-align: center;
+    font-size: small;
+}
+
+img {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.button-group{
+    margin: -10px 0 10px 0;
+    text-align: center;
 }
