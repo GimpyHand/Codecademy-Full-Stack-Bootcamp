@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>New User Setup</title>
+    </head>
+    <body>
+        <nav>
+            <a href="Class1.html">Class 1</a>
+            <a href="Class2.html">Class 2</a>
+            <a href="Class3.html">Class 3</a>
+        </nav>
+        <h2>New User Creation Request</h2>
+        <h3>Please fill in the following information</h3>
+        <form>
+            <table>
+                <tr>
+                    <td>Full Name:</td>
+                    <td><input type="text" placeholder="Alex Jessup" name="Full Name" required></td>
+                </tr>
+                <tr>
+                    <td>Start Date:</td>
+                    <td><input type="date" name="Start Date" required><br></td>
+                </tr>
+                <tr>
+                    <td>Department:</td>
+                    <td><select name="Department">
+                            <option>Head Office</option>
+                            <option>Aerospace</option>
+                            <option>Agriculture</option>
+                            <option>Plating</option>
+                            <option>Finance</option>
+                            <option>IT</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" placeholder="email@email.com" name="Email" required></td>
+                </tr>
+                <tr>
+                    <td rowspan="6">Requirements:</td>
+                    <td><input type="checkbox" name="Email Required"> Email</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="Team Required"> Teams</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="VS Code Required"> VS Code</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="Salesforce Required"> Salesforce</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="ERP Required"> ERP</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="Quantum Required"> Quantum</td>
+                </tr>
+                <tr>
+                    <td>Signed Contract:</td>
+                    <td><input type="file" name="Signed Contract" required></td>
+                </tr>
+                <tr>
+                    <td>Additional Info:</td>
+                    <td><textarea rows="5" maxlength="280"></textarea></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" name="Submit"></td>
+                    <td><input type="reset" name="Reset"></td>
+                </tr>
+            </table>
+            <br>
+            <br>
+        </form>
+        <center><footer>Made by <a href="https://github.com/gimpyhand" target="_blank">Alex</a> in 15 minutes</footer></center>
+    </body>
+</html>
