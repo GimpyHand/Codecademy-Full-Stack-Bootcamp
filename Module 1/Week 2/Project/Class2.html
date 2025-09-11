@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="CSS/styles.css">
+        <title>Jessup's Jerky</title>
+    </head>
+    <body>
+        <nav>
+            <a href="https://jessupsjerky.ca/">Home</a>
+            <a href="https://jessupsjerky.ca/products">Products</a>
+            <a href="https://jessupsjerky.ca/news">News</a>
+            <a href="https://jessupsjerky.ca/cart">Cart</a>
+        </nav>
+        <img src="images/Logo.png">
+        <h2>New Employee Creation Request</h2>
+        <h3>Please fill in the following information</h3>
+        <form>
+            <table>
+                <tr>
+                    <td>Full Name:</td>
+                    <td><input type="text" placeholder="Alex Jessup" name="Full Name" required></td>
+                </tr>
+                <tr>
+                    <td>Start Date:</td>
+                    <td><input type="date" name="Start Date" required><br></td>
+                </tr>
+                <tr>
+                    <td>Department:</td>
+                    <td><select name="Department">
+                            <option>Executive</option>
+                            <option>Head Office</option>
+                            <option>HR</option>
+                            <option>IT</option>
+                            <option>Kitchen</option>
+                            <option>Production</option>
+                            <option>Sales</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" placeholder="email@email.com" name="Email" required></td>
+                </tr>
+                <tr>
+                    <td rowspan="6">Requirements:</td>
+                    <td><input type="checkbox" name="Email" checked> Email</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="Teams" checked> Teams</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="VS_Code"> VS Code</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="Salesforce"> Salesforce</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="ERP"> ERP</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="Laptop"> Laptop</td>
+                </tr>
+                <tr>
+                    <td>Signed Contract:</td>
+                    <td><input type="file" name="Signed Contract" required></td>
+                </tr>
+                <tr>
+                    <td>Additional Info:</td>
+                    <td><textarea rows="5" maxlength="280"></textarea></td>
+                </tr>
+            </table>
+            <br>
+            <div class="button-group">
+            <input type="submit" name="Submit">
+            <input type="reset" name="Reset">
+            </div>
+        </form>
+        <footer>Made by <a href="https://github.com/gimpyhand" target="_blank">Alex</a> in 30 minutes</footer>
+    </body>
+</html>
