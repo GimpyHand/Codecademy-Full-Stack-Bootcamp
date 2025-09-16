@@ -1,0 +1,76 @@
+body {
+  padding:1rem;
+    background-color: #eaeaea;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    color: rgb(214, 0, 0);
+    font-size: larger;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+p {
+    
+}
+
+a {
+    color: #8271ff;
+    font-weight: 500;
+    font-size: large;
+}
+
+.charts-container {
+  display: flex;
+  justify-content: center;  /* Centers horizontally */
+  align-items: center;      /* Centers vertically if container has height */
+  flex-wrap: wrap;          /* Optional: wraps items if there are many */
+  gap: 30px;                /* Spacing between charts */
+}
+
+
+.chart {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background: conic-gradient(
+    #58e737 190deg 260deg,
+    #8271ff 260deg 360deg
+  );
+    margin-inline: 15px;
+}
+
+.donut {
+  margin-top: rem;
+
+  /* To place the hole in the center */
+  display: grid;
+  place-items: center;
+}
+
+.donut::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 61px;
+  background: #eaeaea;
+  border-radius: 100%;
+}
+
+.skill {
+    font-weight: 500;
+    width: 100px;
+    text-align: center;
+    margin-top: 10px;
+    margin-inline: 15px;
+}

@@ -1,4 +1,23 @@
 ## Notes
 -  
 ## Homework
--  
+- Build a personal portfolio using HTML/CSS **DUE 2025-09-25**
+- Topics
+	- Software Development
+	- 3D Modelling
+	- Graphic Design
+	- Music
+- Contact Info
+	- Name
+	- Title
+	- GitHub
+	- Social Media
+	- Email
+- Paragraph or 2 about myself
+- Experience
+- Projects / Links to project pages
+- Contact form
+- Skills
+- Scrolling left <-> Right Project carousel
+- Collapsible headers (Experience)
+- 
