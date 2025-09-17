@@ -78,7 +78,7 @@ h3 {
   font-size: 30px;
   margin-top: 0;
   margin-bottom: 0;
-  color: #FFFFFF;
+  color: #8271ff;
 }
 
 h4 {
@@ -96,6 +96,7 @@ h4 {
   width: 300px;
   clip-path: circle(50%);
   z-index: 1;
+  margin-bottom: -20px;
 }
 
 img {
@@ -123,7 +124,7 @@ a.nav:hover {
 }
 
 h3 a {
-  color: #FFFFFF;
+  color: #8271ff;
   text-align: left;
   font-family: "VT323", monospace;
   font-size: 30px;
@@ -139,6 +140,7 @@ h3 a:hover {
   font-size: 30px;
   margin-top: 0;
   margin-bottom: 0;
+  opacity: 50%;
 }
 
 #projects {
