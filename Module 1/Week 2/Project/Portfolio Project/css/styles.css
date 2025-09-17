@@ -101,6 +101,7 @@ h4 {
 img {
   border-radius: 10px;
   width:19%;
+  z-index: 1;
 }
 
 a {
@@ -145,6 +146,7 @@ h3 a:hover {
   justify-content: center;
   align-items: center;
   gap:.25%;
+  z-index: 1;
 }
 
 .charts-container {
@@ -153,6 +155,7 @@ h3 a:hover {
   align-items: center;
   flex-wrap: wrap;
   gap: 30px;
+  z-index: 1;
 }
 
 .chart.html {
@@ -161,6 +164,7 @@ h3 a:hover {
   border-radius: 100%;
   background: conic-gradient(#8271ff 0deg 340deg, #dbdada 340deg 360deg);
   margin-inline: 15px;
+  z-index: 1;
 }
 
 .chart.javascript {
@@ -169,6 +173,7 @@ h3 a:hover {
   border-radius: 100%;
   background: conic-gradient(#8271ff 0deg 40deg, #dbdada 40deg 360deg);
   margin-inline: 15px;
+  z-index: 1;
 }
 
 .chart.python {
@@ -177,6 +182,7 @@ h3 a:hover {
   border-radius: 100%;
   background: conic-gradient(#8271ff 0deg 195deg, #dbdada 195deg 360deg);
   margin-inline: 15px;
+  z-index: 1;
 }
 
 .chart.linux {
@@ -185,6 +191,7 @@ h3 a:hover {
   border-radius: 100%;
   background: conic-gradient(#8271ff 0deg 260deg, #dbdada 260deg 360deg);
   margin-inline: 15px;
+  z-index: 1;
 }
 
 .chart.adobe {
@@ -193,6 +200,7 @@ h3 a:hover {
   border-radius: 100%;
   background: conic-gradient(#8271ff 0deg 320deg, #dbdada 320deg 360deg);
   margin-inline: 15px;
+  z-index: 1;
 }
 
 .chart.blender {
@@ -201,11 +209,13 @@ h3 a:hover {
   border-radius: 100%;
   background: conic-gradient(rgb(130, 113, 255) 0deg 300deg, #dbdada 300deg 360deg);
   margin-inline: 15px;
+  z-index: 1;
 }
 .donut {
   margin-top: rem;
   display: grid;
   place-items: center;
+  z-index: 1;
 }
 
 .donut::after {
@@ -213,8 +223,9 @@ h3 a:hover {
   display: block;
   width: 60px;
   height: 61px;
-  background: #eaeaea;
+  background: #3b3b3b;
   border-radius: 100%;
+  z-index: 1;
 }
 
 .skill {
@@ -224,6 +235,7 @@ h3 a:hover {
   margin-top: 10px;
   margin-inline: 15px;
   font-family: "VT323", monospace;
+  color: #FFFFFF;
 }
 
 #contact {
@@ -233,21 +245,26 @@ h3 a:hover {
   padding: 10px;
   border-radius: 15px;
   margin: 0 auto;
+  color: #FFFFFF;
+  z-index: 1;
 }
 
 #label {
   text-align: left;
   width: 150px;
+  color: #FFFFFF;
 }
 
 footer {
   text-align: center;
   font-size: small;
+  color:#FFFFFF;
 }
 
 .button-group {
   margin: -10px 0 10px 0;
   text-align: center;
+  z-index: 1;
 }
 
 .s__rays {
@@ -259,6 +276,7 @@ footer {
   margin-right: auto; 
   height: 100%;
   width: 350px;
+  z-index: -1;
   
 }
 
@@ -267,11 +285,12 @@ a-rays {
     display: block;
     width: 100%;
     height: 100%;
-    opacity: 1;
+    opacity: .3;
     pointer-events: none;
     transform: skew(-20deg);
     transition: opacity .7s linear;
     will-change: opacity;
+    z-index: -1;
 }
 
 a-rays .a__scene {
@@ -288,6 +307,7 @@ a-rays .a__scene path {
     stroke-width: 2px;
     animation: a-rays-move 25s linear infinite;
     will-change: transform;
+    z-index: -1;
 }
 @keyframes a-rays-move {
   0% {
