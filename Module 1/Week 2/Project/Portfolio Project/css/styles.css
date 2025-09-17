@@ -1,33 +1,83 @@
+.sansation-regular {
+  font-family: "Sansation", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sansation-bold {
+  font-family: "Sansation", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.vt323-regular {
+  font-family: "VT323", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   padding:1rem;
-    background-color: #eaeaea;
+    background-color: #fcfbfb;
+    font-family: helvetica, arial, "sans serif";
 }
 
 nav {
     display: flex;
     justify-content: center;
     gap: 40px;
-    color: rgb(214, 0, 0);
-    font-size: larger;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #fcfbfb;
+    padding-top:10px;
+    padding-bottom:15px;
+    align-items: center;
+
 }
 
 h1 {
     text-align: center;
+    font-family: "VT323", monospace;
+    font-size: 50px;
+    ;
 }
 
 h2 {
     text-align: center;
     margin-top: 50px;
+    font-family: "VT323", monospace;
+    font-size: 40px;
+}
+
+h3 {
+    text-align: left;
+    font-family: "VT323", monospace;
+    font-size: 30px;
+}
+
+h4 {
+    text-align: left;
+    font-family: "VT323", monospace;
+    font-size: 25px;
 }
 
 p {
-    
+
 }
 
 a {
     color: #8271ff;
-    font-weight: 500;
+    font-weight: 700;
     font-size: large;
+}
+
+a.nav {
+    color: #8271ff;
+    font-weight: 600;
+    font-size: xx-large;
+    font-family: "VT323", monospace;
 }
 
 .charts-container {
@@ -38,18 +88,71 @@ a {
   gap: 30px;                /* Spacing between charts */
 }
 
-
-.chart {
+.chart.html {
   width: 100px;
   height: 100px;
   border-radius: 100%;
   background: conic-gradient(
-    #58e737 190deg 260deg,
-    #8271ff 260deg 360deg
+    #8271ff 0deg 340deg,
+    #dbdada 340deg 360deg
+  );
+  margin-inline: 15px;
+}
+
+.chart.javascript {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background: conic-gradient(
+    #8271ff 0deg 40deg,
+    #dbdada 40deg 360deg
   );
     margin-inline: 15px;
 }
 
+.chart.python {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background: conic-gradient(
+    #8271ff 0deg 195deg,
+    #dbdada 195deg 360deg
+  );
+    margin-inline: 15px;
+}
+
+.chart.linux {p
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background: conic-gradient(
+    #8271ff 0deg 260deg,
+    #dbdada 260deg 360deg
+  );
+    margin-inline: 15px;
+}
+
+.chart.adobe {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background: conic-gradient(
+    #8271ff 0deg 320deg,
+    #dbdada 320deg 360deg
+  );
+    margin-inline: 15px;
+}
+
+.chart.blender {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background: conic-gradient(
+    rgb(130, 113, 255) 0deg 300deg,
+    #dbdada 300deg 360deg
+  );
+    margin-inline: 15px;
+}
 .donut {
   margin-top: rem;
 
@@ -68,9 +171,37 @@ a {
 }
 
 .skill {
-    font-weight: 500;
+    font-size: 25px;
     width: 100px;
     text-align: center;
     margin-top: 10px;
     margin-inline: 15px;
+    font-family: "VT323", monospace;
+}
+
+#contact {
+    border: 5px solid rgb(130, 113, 255,.5);
+    padding: 10px;
+    border-radius: 15px;
+    margin: 0 auto;
+}
+
+#label {
+  text-align: left;
+  width: 200px;
+}
+
+
+form {
+
+}
+
+footer {
+    text-align: center;
+    font-size: small;
+}
+
+.button-group{
+    margin: -10px 0 10px 0;
+    text-align: center;
 }
