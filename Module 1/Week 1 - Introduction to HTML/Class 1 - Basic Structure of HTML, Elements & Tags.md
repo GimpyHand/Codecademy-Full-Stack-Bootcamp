@@ -5,4 +5,4 @@
 - '<!--Comment-->' is how we add comments to HTML
 ## Homework
   - Look at the code of websites
-  - Build a small HTML-only website using tags we learned ![[Class1.html]]
+  - Build a small HTML-only website using tags we learned ![[Codecademy Bootcamp/Module 1/Week 1 - Introduction to HTML/Class1.html]]

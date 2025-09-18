@@ -54,7 +54,7 @@ h1 {
   animation: blink 2s infinite;
   animation-fill-mode: both;
   color: #FFFFFF
-  
+
 }
 
 @keyframes blink {
@@ -272,14 +272,14 @@ footer {
 .s__rays {
   position: fixed;
   top: 0;
-  left: 0; 
-  right: 0; 
-  margin-left: auto; 
-  margin-right: auto; 
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   height: 100%;
   width: 350px;
   z-index: -1;
-  
+
 }
 
 a-rays {
