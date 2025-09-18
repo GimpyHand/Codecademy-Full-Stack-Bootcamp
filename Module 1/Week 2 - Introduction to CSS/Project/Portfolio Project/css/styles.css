@@ -1,25 +1,27 @@
-.sansation-regular {
-  font-family: "Sansation", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
+/*
+  Alex Jessup — Portfolio Stylesheet
+  Organized with section headers for quick navigation.
 
-.sansation-bold {
-  font-family: "Sansation", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
+  SECTIONS
+  1. Globals (Base, Elements)
+  2. Navigation
+  3. Typography & Headings
+  4. Avatar
+  5. Projects
+  6. Skills (Charts, Donuts, Labels, Table Layout)
+  7. Contact Form
+  8. Footer
+  9. Background Rays
+ 10. Animations
+*/
 
-.vt323-regular {
-  font-family: "VT323", monospace;
-  font-weight: 400;
-  font-style: normal;
-}
-
+/* =============================
+   1) Globals (Base, Elements)
+   ============================= */
 body {
   padding: 1rem;
   background-color: #3b3b3b;
-  font-family: helvetica, arial, "sans serif";
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 textarea {
@@ -29,6 +31,15 @@ textarea {
 p {
   color: #FFFFFF;
 }
+
+img {
+  border-radius: 10px;
+  width:19%;
+  z-index: 1;
+}
+/* =============================
+   2) Navigation
+   ============================= */
 nav {
   display: flex;
   justify-content: center;
@@ -45,6 +56,21 @@ nav {
   border-bottom: solid 1px #8271ff;
 }
 
+a.nav {
+  color: #8271ff;
+  font-weight: 600;
+  font-size: xx-large;
+  font-family: "VT323", monospace;
+  text-decoration: none;
+}
+
+a.nav:hover {
+  opacity: 50%;
+}
+
+/* =============================
+   3) Typography & Headings
+   ============================= */
 h1 {
   text-align: center;
   font-family: "VT323", monospace;
@@ -55,12 +81,6 @@ h1 {
   animation-fill-mode: both;
   color: #FFFFFF
 
-}
-
-@keyframes blink {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
 }
 
 h2 {
@@ -90,37 +110,10 @@ h4 {
   color: #FFFFFF;
 }
 
-#avatar {
-  display: block;
-  margin: auto;
-  width: 300px;
-  clip-path: circle(50%);
-  z-index: 1;
-  margin-bottom: -20px;
-}
-
-img {
-  border-radius: 10px;
-  width:19%;
-  z-index: 1;
-}
-
 a {
   color: #8271ff;
   font-weight: 700;
   font-size: large;
-}
-
-a.nav {
-  color: #8271ff;
-  font-weight: 600;
-  font-size: xx-large;
-  font-family: "VT323", monospace;
-  text-decoration: none;
-}
-
-a.nav:hover {
-  opacity: 50%;
 }
 
 h3 a {
@@ -143,7 +136,22 @@ h3 a:hover {
   opacity: 50%;
 }
 
-#projects {
+/* =============================
+   4) Avatar
+   ============================= */
+#avatar {
+  display: block;
+  margin: auto;
+  width: 300px;
+  clip-path: circle(50%);
+  z-index: 1;
+  margin-bottom: -20px;
+}
+
+/* =============================
+   5) Projects
+   ============================= */
+.projects {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -151,95 +159,132 @@ h3 a:hover {
   z-index: 1;
 }
 
+/* =============================
+   6) Skills (Charts, Donuts, Labels, Table Layout)
+   ============================= */
 .charts-container {
+  --chart-size: clamp(70px, 16vw, 100px);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 30px;
-  z-index: 1;
+
 }
 
+/* Skills > Donut charts (per-skill) */
 .chart.html {
-  width: 100px;
-  height: 100px;
+  width: var(--chart-size);
+  height: var(--chart-size);
   border-radius: 100%;
   background: conic-gradient(#8271ff 0deg 340deg, #dbdada 340deg 360deg);
   margin-inline: 15px;
-  z-index: 1;
+
 }
 
 .chart.javascript {
-  width: 100px;
-  height: 100px;
+  width: var(--chart-size);
+  height: var(--chart-size);
   border-radius: 100%;
   background: conic-gradient(#8271ff 0deg 40deg, #dbdada 40deg 360deg);
   margin-inline: 15px;
-  z-index: 1;
+
 }
 
 .chart.python {
-  width: 100px;
-  height: 100px;
+  width: var(--chart-size);
+  height: var(--chart-size);
   border-radius: 100%;
   background: conic-gradient(#8271ff 0deg 195deg, #dbdada 195deg 360deg);
   margin-inline: 15px;
-  z-index: 1;
+
 }
 
 .chart.linux {
-  width: 100px;
-  height: 100px;
+  width: var(--chart-size);
+  height: var(--chart-size);
   border-radius: 100%;
   background: conic-gradient(#8271ff 0deg 260deg, #dbdada 260deg 360deg);
   margin-inline: 15px;
-  z-index: 1;
+
 }
 
 .chart.adobe {
-  width: 100px;
-  height: 100px;
+  width: var(--chart-size);
+  height: var(--chart-size);
   border-radius: 100%;
   background: conic-gradient(#8271ff 0deg 320deg, #dbdada 320deg 360deg);
   margin-inline: 15px;
-  z-index: 1;
+
 }
 
 .chart.blender {
-  width: 100px;
-  height: 100px;
+  width: var(--chart-size);
+  height: var(--chart-size);
   border-radius: 100%;
   background: conic-gradient(rgb(130, 113, 255) 0deg 300deg, #dbdada 300deg 360deg);
   margin-inline: 15px;
-  z-index: 1;
+
 }
 .donut {
-  margin-top: rem;
   display: grid;
   place-items: center;
-  z-index: 1;
 }
 
+/* Skills > Donut hole */
 .donut::after {
   content: "";
   display: block;
-  width: 60px;
-  height: 61px;
+  width: calc(var(--chart-size) * 0.6);
+  height: calc(var(--chart-size) * 0.6);
   background: #3b3b3b;
   border-radius: 100%;
-  z-index: 1;
 }
 
+/* Skills > Labels */
 .skill {
   font-size: 25px;
-  width: 100px;
+  width: var(--chart-size);
   text-align: center;
   margin-top: 10px;
-  margin-inline: 15px;
+  margin-inline: 0;
   font-family: "VT323", monospace;
   color: #FFFFFF;
+  white-space: nowrap;
 }
 
+/* Skills > Table layout */
+.charts-container table {
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+    border: 0;
+}
+
+.charts-container tr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.charts-container td {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border: 0;
+}
+
+
+/* Normalize donut margins so donuts and labels align perfectly */
+.chart {
+    margin-inline: 0;
+}
+
+/* =============================
+   7) Contact Form
+   ============================= */
 #contact {
   display: block;
   width: 360px;
@@ -251,16 +296,10 @@ h3 a:hover {
   z-index: 1;
 }
 
-#label {
+.label {
   text-align: left;
   width: 150px;
   color: #FFFFFF;
-}
-
-footer {
-  text-align: center;
-  font-size: small;
-  color:#FFFFFF;
 }
 
 .button-group {
@@ -269,6 +308,19 @@ footer {
   z-index: 1;
 }
 
+/* =============================
+   8) Footer
+   ============================= */
+footer {
+  text-align: center;
+  font-size: small;
+  color:#FFFFFF;
+}
+
+
+/* =============================
+   9) Background Rays
+   ============================= */
 .s__rays {
   position: fixed;
   top: 0;
@@ -282,7 +334,7 @@ footer {
 
 }
 
-a-rays {
+.a-rays {
     position: absolute;
     display: block;
     width: 100%;
@@ -295,7 +347,7 @@ a-rays {
     z-index: -1;
 }
 
-a-rays .a__scene {
+.a-rays .a__scene {
     position: absolute;
     top: 0;
     left: 50%;
@@ -304,13 +356,24 @@ a-rays .a__scene {
     pointer-events: none;
     transform: translate3d(-50%,0,0);
 }
-a-rays .a__scene path {
+.a-rays .a__scene path {
     stroke-linecap: round;
     stroke-width: 2px;
     animation: a-rays-move 25s linear infinite;
     will-change: transform;
     z-index: -1;
 }
+
+/* =============================
+   10) Animations
+   ============================= */
+@keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Background Rays animation */
 @keyframes a-rays-move {
   0% {
       transform: translateZ(0);
