@@ -21,7 +21,10 @@
 body {
   padding: 1rem;
   background-color: #3b3b3b;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Sansation, Arial, sans-serif;
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 textarea {
@@ -30,6 +33,13 @@ textarea {
 
 p {
   color: #FFFFFF;
+  font-size: large;
+  font-family: "Sansation", monospace;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 img {
@@ -166,6 +176,10 @@ h3 a:hover {
   z-index: 1;
 }
 
+.projects img:hover {
+    scale: 1.05;
+
+}
 /* =============================
    6) Skills (Charts, Donuts, Labels, Table Layout)
    ============================= */
@@ -207,7 +221,7 @@ h3 a:hover {
 
 }
 
-.chart.linux {
+.chart.blender {
   width: var(--chart-size);
   height: var(--chart-size);
   border-radius: 100%;
@@ -225,7 +239,7 @@ h3 a:hover {
 
 }
 
-.chart.blender {
+.chart.linux {
   width: var(--chart-size);
   height: var(--chart-size);
   border-radius: 100%;

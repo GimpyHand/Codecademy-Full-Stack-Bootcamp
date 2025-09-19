@@ -5,7 +5,6 @@
         <link rel="stylesheet" href="css/styles.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Sansation&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
         <title>Alex Jessup's Portfolio</title>
     </head>
@@ -54,7 +53,7 @@
             </div>
         </div>
         <h1 id="home">WELCOME TO MY DIGITAL PORFTOLIO</h1>
-        <img src="images/avatar.png" alt="Headshot of Alex" id="avatar">
+        <img src="images/avatar.png" alt="Headshot of Alex" id="avatar" title="Alex Jessup">
         <h2 id="about">WHO AM I?</h2>
              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget lorem velit. Morbi eleifend felis id ipsum commodo dignissim. Aliquam dignissim, arcu non condimentum efficitur, augue dui sollicitudin mauris, scelerisque egestas ante urna ut diam. Sed iaculis gravida rhoncus. Integer elit mauris, tempus ut est sed, eleifend sollicitudin eros. Sed lorem diam, sodales sit amet lacinia ut, sodales a nulla. Maecenas congue at orci at pharetra. In sagittis risus quis gravida molestie. Phasellus tempor consequat dapibus. Proin feugiat pharetra pharetra. In vel mauris quis ante auctor consequat vitae at magna. Vestibulum mi ligula, congue sed laoreet quis, viverra vitae ipsum. Donec euismod tincidunt lectus, a convallis eros pulvinar sed. Nam imperdiet venenatis lorem ac suscipit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 <br>
@@ -97,11 +96,11 @@ Quisque ac convallis ante. Aliquam erat volutpat. Nunc sit amet lectus condiment
             </p>
         <h2 id="projects">PROJECTS</h2>
             <div class="projects">
-                <img src="images/coding.jpeg" alt="Coding project">
-                <img src="images/design.jpeg" alt="Design project">
-                <img src="images/modelling.jpeg" alt="3D modelling project">
-                <img src="images/music.jpeg" alt="Music project">
-                <img src="images/music.jpeg" alt="Music project">
+                <img src="images/coding.jpeg" alt="Coding project" title="Coding projects">
+                <img src="images/design.jpeg" alt="Design project" title="Design projects">
+                <img src="images/modelling.jpeg" alt="3D modelling project" title="3D modelling projects">
+                <img src="images/music.jpeg" alt="Music project" title="Music projects">
+                <img src="images/music.jpeg" alt="Music project" title="Random projects">
             </div>
         <h2 id="skills">SKILLS</h2>
         <div class="charts-container">
@@ -125,19 +124,19 @@ Quisque ac convallis ante. Aliquam erat volutpat. Nunc sit amet lectus condiment
             <table id="contact">
                 <tr>
                     <td class="label"><label for="from">NAME:*</label></td>
-                    <td><input type="text" id="from" name="From" placeholder="Alex Jessup"></td>
+                    <td><input type="text" id="from" name="From" placeholder="Alex Jessup" required></td>
                 </tr>
                 <tr>
                     <td class="label"><label for="emailAddress">EMAIL:*</label></td>
-                    <td><input type="email" id="emailAddress" name="Email" placeholder="alexjessup@proton.me"></td>
+                    <td><input type="email" id="emailAddress" name="Email" placeholder="alexjessup@proton.me" required></td>
                 </tr>
                 <tr>
                     <td class="label"><label for="phoneNumber">PHONE:</label></td>
                     <td><input type="tel" id="phoneNumber" name="Phone" placeholder="(000) 000-0000"></td>
                 </tr>
                 <tr>
-                    <td rowspan="3" class="label">PREFERRED<br>CONTACT<br>METHOD:*</td>
-                    <td><input type="radio" id="email" name="ContactType" value="Email"><label for="email">EMAIL</label></td>
+                    <td rowspan="3" class="label">PREFERRED<br>CONTACT<br>METHOD:</td>
+                    <td><input type="radio" id="email" name="ContactType" value="Email" checked><label for="email">EMAIL</label></td>
                 </tr>
                 <tr>
                     <td><input type="radio" id="phone" name="ContactType" value="Phone"><label for="phone">PHONE</label></td>
@@ -149,7 +148,7 @@ Quisque ac convallis ante. Aliquam erat volutpat. Nunc sit amet lectus condiment
                     <td class="label"><label for="details">MESSAGE:*</label></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><textarea id="details" rows="8" maxlength="10000" name="details" placeholder="Rad page!"></textarea></td>
+                    <td colspan="2"><textarea id="details" rows="8" maxlength="10000" name="details" placeholder="Rad page!" required></textarea></td>
                 </tr>
             </table>
             <br>
