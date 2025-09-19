@@ -315,10 +315,11 @@ h3 a:hover {
   margin: 0 auto;
   color: #FFFFFF;
   z-index: 1;
+  text-align: center;
 }
 
 .label {
-  text-align: left;
+  text-align: center;
   width: 150px;
   color: #FFFFFF;
 }
