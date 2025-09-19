@@ -64,10 +64,6 @@ a.nav {
   text-decoration: none;
 }
 
-a.nav:hover {
-  opacity: 50%;
-}
-
 /* =============================
    3) Typography & Headings
    ============================= */
@@ -107,13 +103,24 @@ h4 {
   font-size: 25px;
   margin-top: 0;
   margin-bottom: 0;
-  color: #FFFFFF;
+  color: #00F8F1;
 }
 
 a {
   color: #8271ff;
   font-weight: 700;
   font-size: large;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 50%;
+}
+
+footer a {
+  color: #00F8F1;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 h3 a {
@@ -249,7 +256,7 @@ h3 a:hover {
   margin-top: 10px;
   margin-inline: 0;
   font-family: "VT323", monospace;
-  color: #FFFFFF;
+  color: #00F8F1;
   white-space: nowrap;
 }
 
