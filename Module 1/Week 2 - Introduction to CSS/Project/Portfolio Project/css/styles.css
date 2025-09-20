@@ -18,10 +18,16 @@
 /* =============================
    1) Globals (Base, Elements)
    ============================= */
+.forum-regular {
+  font-family: "Forum", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   padding: 1rem;
   background-color: #3b3b3b;
-  font-family: Sansation, Arial, sans-serif;
+  font-family: "Forum", serif;
   max-width: 1040px;
   margin-left: auto;
   margin-right: auto;
@@ -33,8 +39,8 @@ textarea {
 
 p {
   color: #FFFFFF;
-  font-size: large;
-  font-family: "Sansation", monospace;
+  font-size: x-large;
+  font-family: "Forum", serif;
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
@@ -178,6 +184,8 @@ h3 a:hover {
 
 .projects img:hover {
     scale: 1.05;
+    z-index: 2;
+    box-shadow: 0 0 25px 10px #00F8F1;
 
 }
 /* =============================
@@ -318,6 +326,10 @@ h3 a:hover {
   text-align: center;
 }
 
+#contact:hover {
+    box-shadow: #8271ff 0px 0px 20px;
+}
+
 .label {
   text-align: center;
   width: 150px;
@@ -337,6 +349,7 @@ footer {
   text-align: center;
   font-size: small;
   color:#FFFFFF;
+  margin-top:25px;
 }
 
 
