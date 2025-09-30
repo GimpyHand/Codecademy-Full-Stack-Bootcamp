@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ScriptSphere • Messages</title>
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/brand.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="home.html">
+        <span class="brand-logo" aria-hidden="true"></span>
+        <span>ScriptSphere</span>
+      </a>
+      <!-- CSS-only burger toggle -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle d-lg-none">
+      <label for="nav-toggle" class="nav-toggle-label d-lg-none" aria-label="Toggle navigation" role="button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </label>
+      <div class="nav-collapse w-100 d-flex flex-column flex-lg-row align-items-start align-items-lg-center">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Manage Connections</a></li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="messages.html">Messages</a></li>
+          <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-4 my-lg-5">
+    <div class="row g-4">
+
+      <!-- Conversations list -->
+      <aside class="col-12 col-lg-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h1 class="h4 mb-0">Conversations</h1>
+              <span class="badge text-bg-light text-muted">7</span>
+            </div>
+            <div class="list-group">
+              <a href="#thread" class="list-group-item list-group-item-action d-flex align-items-center gap-2 active">
+                <span class="avatar avatar-xxs" data-initials="AN"></span>
+                <div>
+                  <div class="small fw-semibold">Anne Nguyen</div>
+                  <small class="text-muted">Typing…</small>
+                </div>
+              </a>
+              <a href="#thread" class="list-group-item list-group-item-action d-flex align-items-center gap-2">
+                <span class="avatar avatar-xxs theme-2" data-initials="EV"></span>
+                <div>
+                  <div class="small fw-semibold">Evan Vega</div>
+                  <small class="text-muted">See you at 3?</small>
+                </div>
+              </a>
+              <a href="#thread" class="list-group-item list-group-item-action d-flex align-items-center gap-2">
+                <span class="avatar avatar-xxs theme-3" data-initials="AA"></span>
+                <div>
+                  <div class="small fw-semibold">Amir Ahmed</div>
+                  <small class="text-muted">Sent a file</small>
+                </div>
+              </a>
+              <a href="#thread" class="list-group-item list-group-item-action d-flex align-items-center gap-2">
+                <span class="avatar avatar-xxs" data-initials="CL"></span>
+                <div>
+                  <div class="small fw-semibold">Chloe Lam</div>
+                  <small class="text-muted">Thanks!</small>
+                </div>
+              </a>
+              <a href="#thread" class="list-group-item list-group-item-action d-flex align-items-center gap-2">
+                <span class="avatar avatar-xxs theme-2" data-initials="PE"></span>
+                <div>
+                  <div class="small fw-semibold">Pablo Estevez</div>
+                  <small class="text-muted">Let’s connect</small>
+                </div>
+              </a>
+              <a href="#thread" class="list-group-item list-group-item-action d-flex align-items-center gap-2">
+                <span class="avatar avatar-xxs theme-3" data-initials="MM"></span>
+                <div>
+                  <div class="small fw-semibold">Mary Moreno</div>
+                  <small class="text-muted">Will do</small>
+                </div>
+              </a>
+              <a href="#thread" class="list-group-item list-group-item-action d-flex align-items-center gap-2">
+                <span class="avatar avatar-xxs" data-initials="RL"></span>
+                <div>
+                  <div class="small fw-semibold">Riley Lee</div>
+                  <small class="text-muted">On my way</small>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Message thread -->
+      <section class="col-12 col-lg-8" id="thread">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="avatar avatar-xxs theme-3" data-initials="AN"></span>
+              <div>
+                <div class="fw-semibold small">Anne Nguyen</div>
+                <small class="text-muted">Last seen 5m ago</small>
+              </div>
+            </div>
+            <hr class="text-muted">
+
+            <div class="chat-thread">
+              <div class="chat-item from-them gap-2">
+                <span class="avatar avatar-xxs theme-3" data-initials="AN"></span>
+                <div>
+                  <div class="chat-bubble">Hey! Did you read that post about the event loop you shared?</div>
+                  <span class="chat-meta">09:12</span>
+                </div>
+              </div>
+              <div class="chat-item from-me">
+                <div>
+                  <div class="chat-bubble">Yep, super helpful. The microtask bit finally clicked for me.</div>
+                  <span class="chat-meta text-end d-block">09:13</span>
+                </div>
+              </div>
+              <div class="chat-item from-them gap-2">
+                <span class="avatar avatar-xxs theme-3" data-initials="AN"></span>
+                <div>
+                  <div class="chat-bubble">Same! Also, are you joining the study group later?</div>
+                  <span class="chat-meta">09:14</span>
+                </div>
+              </div>
+              <div class="chat-item from-me">
+                <div>
+                  <div class="chat-bubble">I can at 3pm. Need to wrap a layout on ScriptSphere first.</div>
+                  <span class="chat-meta text-end d-block">09:15</span>
+                </div>
+              </div>
+              <div class="chat-item from-them gap-2">
+                <span class="avatar avatar-xxs theme-3" data-initials="AN"></span>
+                <div>
+                  <div class="chat-bubble">Perfect. Bring your notes on closures too?</div>
+                  <span class="chat-meta">09:16</span>
+                </div>
+              </div>
+              <div class="chat-item from-me">
+                <div>
+                  <div class="chat-bubble">On it. I’ll print the cheatsheet I made.</div>
+                  <span class="chat-meta text-end d-block">09:16</span>
+                </div>
+              </div>
+              <div class="chat-item from-them gap-2">
+                <span class="avatar avatar-xxs theme-3" data-initials="AN"></span>
+                <div>
+                  <div class="chat-bubble">Awesome, see you then!</div>
+                  <span class="chat-meta">09:17</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Write a message…" aria-label="message" disabled>
+                <button class="btn btn-primary" type="button" disabled>Send</button>
+              </div>
+              <small class="text-muted d-block mt-2">Messaging UI preview (no JavaScript enabled)</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="py-4 bg-light border-top mt-auto">
+    <div class="container small text-center text-muted">© 2025 ScriptSphere</div>
+  </footer>
+
+</body>
+</html>

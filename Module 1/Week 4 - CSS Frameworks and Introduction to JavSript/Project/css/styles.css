@@ -1,3 +1,336 @@
-* {
-    background-color: lightgrey;
+:root{
+  /* Fresh, original palette */
+  --sc-bg: #f5f7fb;
+  --sc-surface: #ffffff;
+  --sc-text: #1f2937;
+  --sc-muted: #6b7280;
+  --sc-border: #e5e7eb;
+
+  --sc-accent: #2bbbad;        /* teal */
+  --sc-accent-weak: #e6fbf7;   /* pale teal */
+  --sc-accent-contrast: #0e5f56;
 }
+
+html, body {height: 100%;}
+body {background-color: var(--sc-bg); color: var(--sc-text);} 
+
+/* Navbar brand logo size */
+.brand-logo{width:24px; height:24px;}
+
+/* Cards */
+.card{border-radius:14px; border:1px solid var(--sc-border); background: var(--sc-surface);} 
+.card .card-body{padding:1rem 1.25rem;}
+
+/* Sidebar list-group */
+.list-group .list-group-item{border-color:var(--sc-border); color: var(--sc-text);} 
+.list-group .list-group-item:hover{background-color: #f3f4f6;}
+.list-group .list-group-item.active{background-color:var(--sc-accent); border-color:var(--sc-accent); color:#073c36;}
+
+/* Pagination theme */
+.sc-pagination .page-link{color:var(--sc-accent); border-color:var(--sc-accent);} 
+.sc-pagination .page-link:hover{background-color:var(--sc-accent-weak); color:var(--sc-accent);} 
+.sc-pagination .page-item.active .page-link,.sc-pagination .page-link.active{background-color:var(--sc-accent); color:#fff; border-color:var(--sc-accent);} 
+
+/* Avatar component (original, CSS-only initials) */
+.avatar{display:inline-flex; align-items:center; justify-content:center; border-radius:50%; color:#fff; font-weight:700; letter-spacing:.5px; text-transform:uppercase; border:3px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,.08); user-select:none;}
+.avatar::before{content: attr(data-initials);} 
+.avatar-xl{width:120px; height:120px; font-size:2rem;}
+.avatar-xxs{width:28px; height:28px; font-size:.65rem; border-width:2px; margin-left:-8px;}
+.avatar-group .avatar-xxs:first-child{margin-left:0;}
+
+/* Avatar backgrounds: cycle a few gradients for variety */
+.avatar{background: radial-gradient(120% 120% at 0% 0%, var(--sc-accent) 0%, #77e3d9 60%, var(--sc-accent-contrast) 120%);} 
+.avatar.theme-2{background: radial-gradient(120% 120% at 0% 0%, #f97316 0%, #f9b05e 60%, #7c2d12 120%);} /* orange variant */
+.avatar.theme-3{background: radial-gradient(120% 120% at 0% 0%, #6366f1 0%, #a5b4fc 60%, #312e81 120%);} /* indigo variant */
+
+/* Footer spacing */
+footer{margin-top:3rem;}
+
+/* === Aurora Original Theme Overrides (appended) === */
+:root{
+  --sc-bg: #f6f6fb;
+  --sc-surface: #ffffff;
+  --sc-text: #1b2330;
+  --sc-muted: #6b7280;
+  --sc-border: #e9e9f2;
+  --sc-accent: #7c5cff;        /* violet */
+  --sc-accent-weak: #efeaff;   /* pale violet */
+  --sc-accent-contrast: #2a1e77;
+  --sc-accent-2: #38bdf8;      /* sky blue */
+}
+
+body {
+  color: var(--sc-text);
+  background:
+    radial-gradient(1200px 600px at -10% -20%, #eef2ff 0%, rgba(238,242,255,0) 60%),
+    radial-gradient(1000px 500px at 110% 10%, #e0f2fe 0%, rgba(224,242,254,0) 60%),
+    linear-gradient(180deg, var(--sc-bg), #fbfbfe);
+}
+
+/* Navbar: custom gradient while keeping navbar-dark text for contrast */
+.navbar.bg-dark{
+  background: linear-gradient(135deg, var(--sc-accent) 0%, var(--sc-accent-2) 100%) !important;
+  border-bottom: 3px solid rgba(0,0,0,0.08);
+}
+
+/* Buttons: primary and secondary */
+.btn-primary{
+  background-color: var(--sc-accent);
+  border-color: var(--sc-accent);
+  box-shadow: 0 6px 16px rgba(124,92,255,0.25);
+}
+.btn-primary:hover, .btn-primary:focus{
+  background-color: #6a4df0;
+  border-color: #6a4df0;
+}
+.btn-outline-secondary{
+  color: var(--sc-accent-contrast);
+  border-color: #cfd3e6;
+  background-color: #fff;
+}
+.btn-outline-secondary:hover, .btn-outline-secondary:focus{
+  background-color: var(--sc-accent-weak);
+  border-color: var(--sc-accent-weak);
+  color: var(--sc-accent-contrast);
+}
+
+/* Cards */
+.card{
+  border-radius:18px;
+  border:1px solid var(--sc-border);
+  background: linear-gradient(180deg, #ffffff, #fcfcff);
+  box-shadow: 0 10px 24px rgba(18, 22, 33, 0.06);
+}
+
+/* Sidebar list-group */
+.list-group{border-radius:14px; overflow:hidden;}
+.list-group .list-group-item:hover{background-color: #f3f5ff; box-shadow: inset 4px 0 0 0 var(--sc-accent-weak);} 
+.list-group .list-group-item.active{background-color:var(--sc-accent); border-color:var(--sc-accent); color:#ffffff;}
+
+/* Pagination */
+.sc-pagination .page-link{color:var(--sc-accent); border-color:var(--sc-accent);} 
+.sc-pagination .page-link:hover{background-color:var(--sc-accent-weak); color:var(--sc-accent);} 
+.sc-pagination .page-item.active .page-link,.sc-pagination .page-link.active{background-color:var(--sc-accent); color:#fff; border-color:var(--sc-accent);} 
+
+/* Avatars harmonized with new palette */
+.avatar{background: radial-gradient(120% 120% at 0% 0%, var(--sc-accent) 0%, #b6a6ff 60%, var(--sc-accent-contrast) 120%);} 
+.avatar.theme-2{background: radial-gradient(120% 120% at 0% 0%, #22c55e 0%, #86efac 60%, #14532d 120%);} /* emerald */
+.avatar.theme-3{background: radial-gradient(120% 120% at 0% 0%, #0ea5e9 0%, #93c5fd 60%, #1e3a8a 120%);} /* blue */
+
+
+/* Fallback custom properties on html (in case :root is malformed by editor) */
+html{
+  --sc-bg: #f6f6fb;
+  --sc-surface: #ffffff;
+  --sc-text: #1b2330;
+  --sc-muted: #6b7280;
+  --sc-border: #e9e9f2;
+  --sc-accent: #7c5cff;
+  --sc-accent-weak: #efeaff;
+  --sc-accent-contrast: #2a1e77;
+  --sc-accent-2: #38bdf8;
+}
+
+::root{
+  /* Fresh, original palette */
+  --sc-bg: #f5f7fb;
+  --sc-surface: #ffffff;
+  --sc-text: #1f2937;
+  --sc-muted: #6b7280;
+  --sc-border: #e5e7eb;
+
+  --sc-accent: #2bbbad;        /* teal */
+  --sc-accent-weak: #e6fbf7;   /* pale teal */
+  --sc-accent-contrast: #0e5f56;
+}
+
+html, body {height: 100%;}
+body {background-color: var(--sc-bg); color: var(--sc-text);} 
+
+/* Navbar brand logo size */
+.brand-logo{width:24px; height:24px;}
+
+/* Cards */
+.card{border-radius:14px; border:1px solid var(--sc-border); background: var(--sc-surface);} 
+.card .card-body{padding:1rem 1.25rem;}
+
+/* Sidebar list-group */
+.list-group .list-group-item{border-color:var(--sc-border); color: var(--sc-text);} 
+.list-group .list-group-item:hover{background-color: #f3f4f6;}
+.list-group .list-group-item.active{background-color:var(--sc-accent); border-color:var(--sc-accent); color:#073c36;}
+
+/* Pagination theme */
+.sc-pagination .page-link{color:var(--sc-accent); border-color:var(--sc-accent);} 
+.sc-pagination .page-link:hover{background-color:var(--sc-accent-weak); color:var(--sc-accent);} 
+.sc-pagination .page-item.active .page-link,.sc-pagination .page-link.active{background-color:var(--sc-accent); color:#fff; border-color:var(--sc-accent);} 
+
+/* Avatar component (original, CSS-only initials) */
+.avatar{display:inline-flex; align-items:center; justify-content:center; border-radius:50%; color:#fff; font-weight:700; letter-spacing:.5px; text-transform:uppercase; border:3px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,.08); user-select:none;}
+.avatar::before{content: attr(data-initials);} 
+.avatar-xl{width:120px; height:120px; font-size:2rem;}
+.avatar-xxs{width:28px; height:28px; font-size:.65rem; border-width:2px; margin-left:-8px;}
+.avatar-group .avatar-xxs:first-child{margin-left:0;}
+
+/* Avatar backgrounds: cycle a few gradients for variety */
+.avatar{background: radial-gradient(120% 120% at 0% 0%, var(--sc-accent) 0%, #77e3d9 60%, var(--sc-accent-contrast) 120%);} 
+.avatar.theme-2{background: radial-gradient(120% 120% at 0% 0%, #f97316 0%, #f9b05e 60%, #7c2d12 120%);} /* orange variant */
+.avatar.theme-3{background: radial-gradient(120% 120% at 0% 0%, #6366f1 0%, #a5b4fc 60%, #312e81 120%);} /* indigo variant */
+
+/* Footer spacing */
+footer{margin-top:3rem;}
+
+/* === Aurora Original Theme Overrides (appended) === */
+::root{
+  --sc-bg: #f6f6fb;
+  --sc-surface: #ffffff;
+  --sc-text: #1b2330;
+  --sc-muted: #6b7280;
+  --sc-border: #e9e9f2;
+  --sc-accent: #7c5cff;        /* violet */
+  --sc-accent-weak: #efeaff;   /* pale violet */
+  --sc-accent-contrast: #2a1e77;
+  --sc-accent-2: #38bdf8;      /* sky blue */
+}
+
+body {
+  color: var(--sc-text);
+  background:
+    radial-gradient(1200px 600px at -10% -20%, #eef2ff 0%, rgba(238,242,255,0) 60%),
+    radial-gradient(1000px 500px at 110% 10%, #e0f2fe 0%, rgba(224,242,254,0) 60%),
+    linear-gradient(180deg, var(--sc-bg), #fbfbfe);
+}
+
+/* Navbar: custom gradient while keeping navbar-dark text for contrast */
+.navbar.bg-dark{
+  background: linear-gradient(135deg, var(--sc-accent) 0%, var(--sc-accent-2) 100%) !important;
+  border-bottom: 3px solid rgba(0,0,0,0.08);
+}
+
+/* Buttons: primary and secondary */
+.btn-primary{
+  background-color: var(--sc-accent);
+  border-color: var(--sc-accent);
+  box-shadow: 0 6px 16px rgba(124,92,255,0.25);
+}
+.btn-primary:hover, .btn-primary:focus{
+  background-color: #6a4df0;
+  border-color: #6a4df0;
+}
+.btn-outline-secondary{
+  color: var(--sc-accent-contrast);
+  border-color: #cfd3e6;
+  background-color: #fff;
+}
+.btn-outline-secondary:hover, .btn-outline-secondary:focus{
+  background-color: var(--sc-accent-weak);
+  border-color: var(--sc-accent-weak);
+  color: var(--sc-accent-contrast);
+}
+
+/* Cards */
+.card{
+  border-radius:18px;
+  border:1px solid var(--sc-border);
+  background: linear-gradient(180deg, #ffffff, #fcfcff);
+  box-shadow: 0 10px 24px rgba(18, 22, 33, 0.06);
+}
+
+/* Sidebar list-group */
+.list-group{border-radius:14px; overflow:hidden;}
+.list-group .list-group-item:hover{background-color: #f3f5ff; box-shadow: inset 4px 0 0 0 var(--sc-accent-weak);} 
+.list-group .list-group-item.active{background-color:var(--sc-accent); border-color:var(--sc-accent); color:#ffffff;}
+
+/* Pagination */
+.sc-pagination .page-link{color:var(--sc-accent); border-color:var(--sc-accent);} 
+.sc-pagination .page-link:hover{background-color:var(--sc-accent-weak); color:var(--sc-accent);} 
+.sc-pagination .page-item.active .page-link,.sc-pagination .page-link.active{background-color:var(--sc-accent); color:#fff; border-color:var(--sc-accent);} 
+
+/* Avatars harmonized with new palette */
+.avatar{background: radial-gradient(120% 120% at 0% 0%, var(--sc-accent) 0%, #b6a6ff 60%, var(--sc-accent-contrast) 120%);} 
+.avatar.theme-2{background: radial-gradient(120% 120% at 0% 0%, #22c55e 0%, #86efac 60%, #14532d 120%);} /* emerald */
+.avatar.theme-3{background: radial-gradient(120% 120% at 0% 0%, #0ea5e9 0%, #93c5fd 60%, #1e3a8a 120%);} /* blue */
+
+
+/* Fallback custom properties on html (in case :root is malformed by editor) */
+html{
+  --sc-bg: #f6f6fb;
+  --sc-surface: #ffffff;
+  --sc-text: #1b2330;
+  --sc-muted: #6b7280;
+  --sc-border: #e9e9f2;
+  --sc-accent: #7c5cff;
+  --sc-accent-weak: #efeaff;
+  --sc-accent-contrast: #2a1e77;
+  --sc-accent-2: #38bdf8;
+}
+
+/* ===== Messages page (chat) ===== */
+.chat-thread{max-height:60vh; overflow:auto; padding:1rem;}
+.chat-item{display:flex; align-items:flex-end; margin-bottom:0.75rem;}
+.chat-item .avatar{flex:0 0 auto;}
+.chat-bubble{max-width:75%; padding:.6rem .8rem; border-radius:14px; border:1px solid var(--sc-border);}
+.from-them .chat-bubble{background:#fff; color:var(--sc-text); border-top-left-radius:6px;}
+.from-me{justify-content:flex-end;}
+.from-me .chat-bubble{background:var(--sc-accent); color:#fff; border-color:var(--sc-accent); border-top-right-radius:6px;}
+.chat-meta{display:block; font-size:.75rem; color:var(--sc-muted); margin-top:.25rem;}
+
+/* ===== Profile page ===== */
+.profile-cover{height:180px; background: linear-gradient(135deg, var(--sc-accent) 0%, var(--sc-accent-2) 100%);} 
+.profile-card{margin-top:-60px;}
+.profile-avatar{width:120px; height:120px; border:4px solid #fff;}
+.profile-handle{color:var(--sc-muted);}
+.profile-stats{display:flex; gap:1.5rem;}
+.profile-stats .stat{font-weight:600;}
+@media (max-width: 576px){
+  .chat-bubble{max-width:85%;}
+  .profile-stats{gap:1rem;}
+}
+
+/* ===== Mobile top navbar with CSS-only burger (no JS) ===== */
+@media (max-width: 991.98px){ /* below lg */
+  /* Reset any bottom padding previously used for fixed bottom bar */
+  body{padding-bottom:0;}
+
+  /* Keep navbar at the top (default flow) */
+  .navbar{
+    position: sticky;
+    top: 0; left: 0; right: 0;
+    z-index: 1030; /* above content */
+    padding-top: .4rem; padding-bottom: .4rem;
+  }
+
+  /* Show brand; place burger to the right */
+  .navbar-brand{display:flex !important;}
+
+  /* Burger button */
+  .nav-toggle{position: absolute; opacity:0; pointer-events:none;}
+  .nav-toggle-label{margin-left:auto; cursor:pointer; padding:.25rem .5rem; display:flex; flex-direction:column; justify-content:center; align-items:center;}
+  .nav-toggle-label .bar{display:block; width:24px; height:2px; background:#fff; margin:4px 0; transition:transform .2s ease, opacity .2s ease; border-radius:2px;}
+
+  /* Collapse container hidden by default */
+  .nav-collapse{display:none !important; width:100%;}
+  /* Expand when checked */
+  #nav-toggle:checked ~ .nav-collapse{display:block !important;}
+
+  /* Stack links vertically in the expanded area */
+  .navbar .nav-collapse{flex-direction: column !important; align-items: stretch !important;}
+  .navbar .nav-collapse .navbar-nav{flex-direction: column !important; gap: 0;}
+  .navbar .nav-collapse .navbar-nav .nav-link{padding: .5rem 0;}
+}
+
+/* Burger animation for checked state */
+@media (max-width: 991.98px){
+  #nav-toggle:checked + .nav-toggle-label .bar:nth-child(1){transform: translateY(6px) rotate(45deg);} 
+  #nav-toggle:checked + .nav-toggle-label .bar:nth-child(2){opacity:0;} 
+  #nav-toggle:checked + .nav-toggle-label .bar:nth-child(3){transform: translateY(-6px) rotate(-45deg);} 
+}
+
+
+/* ===== Brand logo override: CSS-only mark (no external image) ===== */
+.navbar .brand-logo{display:inline-grid; place-items:center; width:28px; height:28px; border-radius:8px; background: linear-gradient(135deg, var(--sc-accent) 0%, var(--sc-accent-2) 100%); color:#fff; box-shadow: 0 2px 6px rgba(0,0,0,.15); border:2px solid rgba(255,255,255,.6);} 
+.navbar .brand-logo::after{content:"S"; font-weight:800; font-size:14px; line-height:1; transform: translateY(1px);} 
+
+
+/* === Fix: Preserve avatar aspect ratio and prevent flex stretching === */
+.avatar{ aspect-ratio: 1 / 1; }
+.profile-avatar{ flex: 0 0 auto; }
