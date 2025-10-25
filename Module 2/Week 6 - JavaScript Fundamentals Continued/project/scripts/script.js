@@ -1,85 +1,186 @@
 /*
-  # Rules
+  Password rules:
   - Minimum length = 8
   - Must contain at least:
     - 1 number
     - 1 lowercase letter
     - 1 uppercase letter
     - 1 special character
-
-  ## NIST Password Requirements for 2025
-  - Minimum 8-character passwords (15+ for privileged accounts)
-  - Password screening against compromised credential databases
-  - Support for passwordless authentication and passkeys
+  - Passwords must match
 */
-let inputPassword = document.querySelector('passwordInput').value;
-let verifyPassword = document.querySelector('passwordVerify').value;
 
-function validatePassword(pwd) {
-  // Check if password is empty or null
-  if(!pwd) {
-    console.log("Password cannot be empty")
-    return
-  }
+// Helper: toggle success/danger styles for a rule item
+function setRuleState(id, isMet) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.classList.toggle('list-group-item-success', !!isMet);
+  el.classList.toggle('list-group-item-danger', !isMet);
+}
 
-  // Check minimum length is 8 characters
-  if(pwd.length >= 8){
-    console.log("You have at least 8 characters")
+// Evaluate password and update UI
+function updateRules() {
+  const pw = document.getElementById('passwordInput')?.value || '';
+  const pw2 = document.getElementById('passwordVerify')?.value || '';
+
+  const hasLen = pw.length >= 8;
+  const hasUpper = /[A-Z]/.test(pw);
+  const hasLower = /[a-z]/.test(pw);
+  const hasDigit = /\d/.test(pw);
+  const hasSpecial = /[!@#$%^&*()\-_=+\[\]{};:\"'<>.,?\/\\|`~]/.test(pw);
+  const matches = pw.length > 0 && pw === pw2;
+
+  setRuleState('rule-length', hasLen);
+  setRuleState('rule-upper', hasUpper);
+  setRuleState('rule-lower', hasLower);
+  setRuleState('rule-number', hasDigit);
+  setRuleState('rule-special', hasSpecial);
+  setRuleState('rule-match', matches);
+
+  return { hasLen, hasUpper, hasLower, hasDigit, hasSpecial, matches };
+}
+
+// Called by inline oninput handlers
+function inputPassword() {
+  updateRules();
+}
+
+// Called by the "Check Password" button
+function validatePassword() {
+  const { hasLen, hasUpper, hasLower, hasDigit, hasSpecial, matches } = updateRules();
+  const ok = hasLen && hasUpper && hasLower && hasDigit && hasSpecial && matches;
+  if (!ok) {
+    alert('Password does not meet all requirements yet.');
   } else {
-    console.log("Password must be at least 8 characters long")
+    alert('Great! Your password meets all requirements.');
   }
+  return ok;
+}
 
-  // Check there's at least 1 number
-  const digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-  let containsDigit = false
-  for(let i = 0; i < pwd.length; i++) {
-    if(digits.includes(pwd[i])) {
-      console.log("You have added at least one number")
-      containsDigit = true
-      break
+// Save Password: copy current password to clipboard and alert
+function copyTextToClipboard(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard.writeText(text);
+  }
+  // Fallback for insecure contexts/older browsers
+  return new Promise((resolve, reject) => {
+    try {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      const successful = document.execCommand('copy');
+      document.body.removeChild(ta);
+      successful ? resolve() : reject(new Error('Copy command was unsuccessful'));
+    } catch (err) {
+      reject(err);
     }
-  }
-  if(!containsDigit) {
-    console.log("Please add at least one number")
-  }
+  });
+}
 
-  // Check for at least 1 lowercase letter
-  for(let i = 0; i < pwd.length; i++) {
-    if(pwd[i] === pwd[i].toLowerCase() && isNaN(parseInt(pwd[i]))) {
-      console.log("You have added at least one lowercase letter")
-      break
-    }
-    if(i === pwd.length - 1) {
-      console.log("Please add at least one lowercase letter")
-    }
+// Show a Bootstrap-style alert in the page (fallback to alert())
+function showAlert(message, type = 'success', timeout = 4000) {
+  const container = document.getElementById('alertContainer');
+  if (!container) {
+    alert(message);
+    return;
   }
+  // Replace any existing alert
+  container.innerHTML = '';
 
-  // Check for at least 1 uppercase letter
-  for(let i = 0; i < pwd.length; i++) {
-    if(pwd[i] === pwd[i].toUpperCase() && isNaN(parseInt(pwd[i]))) {
-      console.log("You have added at least one uppercase letter")
-      break
-    }
-    if(i === pwd.length - 1) {
-      console.log("Please add at least one uppercase letter")
-    }
-  }
+  const wrapper = document.createElement('div');
+  wrapper.className = `alert alert-${type} alert-dismissible fade show`;
+  wrapper.setAttribute('role', 'alert');
+  wrapper.textContent = message;
 
-  // Check for at least 1 special character
-  const specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', '}', ';', ':', '"', "'", '<', '>', ',', '.', '?', '/','\\','|','`','~']
-  let containsSpecialChar = false
-  for(let i = 0; i < pwd.length; i++) {
-    if(specialCharacters.includes(pwd[i])) {
-      console.log("You have added at least one special character")
-      containsSpecialChar = true
-      break
-    }
-  }
-  if(!containsSpecialChar) {
-    console.log("Please add at least one special character")
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'btn-close';
+  btn.setAttribute('aria-label', 'Close');
+  btn.addEventListener('click', () => wrapper.remove());
+
+  wrapper.appendChild(btn);
+  container.appendChild(wrapper);
+
+  if (timeout && timeout > 0) {
+    setTimeout(() => {
+      try { wrapper.classList.remove('show'); } catch (e) {}
+      // Remove after transition (~150ms), keep it simple
+      setTimeout(() => wrapper.remove(), 200);
+    }, timeout);
   }
 }
 
-console.log(inputPassword)
+function savePassword() {
+  // Evaluate and sync UI
+  const { hasLen, hasUpper, hasLower, hasDigit, hasSpecial, matches } = updateRules();
+  const pw = document.getElementById('passwordInput')?.value || '';
+  const pw2 = document.getElementById('passwordVerify')?.value || '';
 
-validatePassword(inputPassword)
+  if (!pw) {
+    showAlert('Please enter a password.', 'warning');
+    return false;
+  }
+
+  // Ensure both fields are filled and match
+  if (!pw2 || !matches) {
+    showAlert('Passwords do not match and cannot be copied. Please make both entries identical.', 'warning');
+    return false;
+  }
+
+  // Ensure all complexity requirements are met
+  if (!(hasLen && hasUpper && hasLower && hasDigit && hasSpecial)) {
+    showAlert('Password does not meet all requirements and cannot be copied yet.', 'warning');
+    return false;
+  }
+
+  // Copy to clipboard
+  copyTextToClipboard(pw)
+    .then(() => {
+      showAlert('Password has been saved to the clipboard.', 'success');
+    })
+    .catch((err) => {
+      console.error('Clipboard error:', err);
+      showAlert('Sorry, could not copy the password to the clipboard.', 'danger');
+    });
+  return true;
+}
+
+// Measure the toggle button widths and adjust input padding so text/placeholder
+// appear centered relative to the entire input group.
+function adjustCentering() {
+  try {
+    const pairs = [
+      { inputId: 'passwordInput', btnId: 'togglePassword' },
+      { inputId: 'passwordVerify', btnId: 'togglePasswordVerify' },
+    ];
+    pairs.forEach(({ inputId, btnId }) => {
+      const input = document.getElementById(inputId);
+      const btn = document.getElementById(btnId);
+      if (!input || !btn) return;
+      const btnRect = btn.getBoundingClientRect();
+      // Use measured width; minimal buffer to account for borders
+      const offset = Math.ceil(btnRect.width) + 1;
+      input.style.setProperty('--toggle-offset', offset + 'px');
+    });
+  } catch (_) {
+    // no-op
+  }
+}
+
+// Initialize styles once DOM is ready (covers refresh / prefilled fields)
+function initUI() {
+  updateRules();
+  adjustCentering();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initUI);
+} else {
+  initUI();
+}
+
+// Keep centering accurate on resize
+window.addEventListener('resize', adjustCentering);
