@@ -12,7 +12,7 @@
   <h2 class="mt-3 text-center">Password Complexity Verification</h2>
   <div class="container mt-4 align-content-center w-50 border p-4 rounded-3">
     <div id="alertContainer" class="mt-2"></div>
-    <ul class="list-group list-group-flush">
+    <ul class="list-group list-group-flush text-center">
       <li id="rule-length" class="list-group-item">At least 8 characters long</li>
       <li id="rule-upper" class="list-group-item">Contains at least one uppercase letter</li>
       <li id="rule-lower" class="list-group-item">Contains at least one lowercase letter</li>
@@ -20,47 +20,55 @@
       <li id="rule-special" class="list-group-item">Contains at least one special character (e.g., !, @, #, $, %, ^, &, *)</li>
       <li id="rule-match" class="list-group-item">Both password entries must match</li>
     </ul>
-    <div class="input-group mt-4">
-      <input
-        type="password"
-        id="passwordInput"
-        class="form-control text-center center-compensated"
-        placeholder="Enter your password"
-        oninput="inputPassword(this.value)"
-        aria-describedby="togglePassword"
-      >
-      <button
-        class="btn btn-outline-secondary"
-        type="button"
-        id="togglePassword"
-        title="Show / hide password"
-        onclick="(function(btn){const pw=document.getElementById('passwordInput'); if(pw.type==='password'){pw.type='text'; btn.textContent='🙈'; } else {pw.type='password'; btn.textContent='👁️';} adjustCentering();})(this)"
-        aria-pressed="false"
-        aria-label="Toggle password visibility"
-      >👁️</button>
-    </div>
+      <div class="input-group mt-4">
+        <input
+          type="password"
+          id="passwordInput"
+          class="form-control center-compensated"
+          placeholder="Enter your password"
+          oninput="inputPassword(this.value)"
+          aria-describedby="togglePassword"
+        >
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          id="togglePassword"
+          title="Show / hide password"
+          onclick="(function(btn){const pw=document.getElementById('passwordInput'); if(pw.type==='password'){pw.type='text'; btn.innerHTML=btn.getAttribute('data-hide-icon'); } else {pw.type='password'; btn.innerHTML=btn.getAttribute('data-show-icon');} adjustCentering();})(this)"
+          aria-pressed="false"
+          aria-label="Toggle password visibility"
+          data-show-icon='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5C5.63636 5 2 12 2 12C2 12 5.63636 19 12 19C18.3636 19 22 12 22 12C22 12 18.3636 5 12 5ZM12 16C9.29091 16 7.09091 12 7.09091 12C7.09091 12 9.29091 8 12 8C14.7091 8 16.9091 12 16.9091 12C16.9091 12 14.7091 16 12 16Z" stroke="#00F8F1" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="#00F8F1" stroke-width="1.5"/></svg>'
+          data-hide-icon='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4L20 20" stroke="#8271ff" stroke-width="1.5"/><path d="M14 14.2362C13.4692 14.7112 12.7684 15.0001 12 15.0001C10.3431 15.0001 9 13.657 9 12.0001C9 11.2317 9.28885 10.531 9.76389 10.0001" stroke="#8271ff" stroke-width="1.5"/><path d="M6.5 6.67334C3.952 8.3961 2 12.0001 2 12.0001C2 12.0001 5.63636 19.0001 12 19.0001C13.9134 19.0001 15.584 18.3215 17 17.4264M19.5 15.3267C20.642 14.0519 22 12.0001 22 12.0001C22 12.0001 18.3636 5.00006 12 5.00006C11.1425 5.00006 10.3289 5.11956 9.5666 5.33728" stroke="#8271ff" stroke-width="1.5"/></svg>'>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5C5.63636 5 2 12 2 12C2 12 5.63636 19 12 19C18.3636 19 22 12 22 12C22 12 18.3636 5 12 5ZM12 16C9.29091 16 7.09091 12 7.09091 12C7.09091 12 9.29091 8 12 8C14.7091 8 16.9091 12 16.9091 12C16.9091 12 14.7091 16 12 16Z" stroke="#8271ff" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="#8271ff" stroke-width="1.5"/></svg>
+        </button>
+      </div>
 
-    <div class="input-group mt-2">
-      <input
-        type="password"
-        id="passwordVerify"
-        class="form-control text-center center-compensated"
-        placeholder="Re-enter your password"
-        oninput="inputPassword(this.value)"
-        aria-describedby="togglePassword"
-      >
-      <button
-        class="btn btn-outline-secondary"
-        type="button"
-        id="togglePasswordVerify"
-        title="Show / hide password"
-        onclick="(function(btn){const pw=document.getElementById('passwordVerify'); if(pw.type==='password'){pw.type='text'; btn.textContent='🙈'; } else {pw.type='password'; btn.textContent='👁️';} adjustCentering();})(this)"
-        aria-pressed="false"
-        aria-label="Toggle password visibility"
-      >👁️</button>
-    </div>
+      <div class="input-group mt-2">
+        <input
+          type="password"
+          id="passwordVerify"
+          class="form-control center-compensated"
+          placeholder="Re-enter your password"
+          oninput="inputPassword(this.value)"
+          aria-describedby="togglePassword"
+        >
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          id="togglePasswordVerify"
+          title="Show / hide password"
+          onclick="(function(btn){const pw=document.getElementById('passwordVerify'); if(pw.type==='password'){pw.type='text'; btn.innerHTML=btn.getAttribute('data-hide-icon'); } else {pw.type='password'; btn.innerHTML=btn.getAttribute('data-show-icon');} adjustCentering();})(this)"
+          aria-pressed="false"
+          aria-label="Toggle password visibility"
+          data-show-icon='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5C5.63636 5 2 12 2 12C2 12 5.63636 19 12 19C18.3636 19 22 12 22 12C22 12 18.3636 5 12 5ZM12 16C9.29091 16 7.09091 12 7.09091 12C7.09091 12 9.29091 8 12 8C14.7091 8 16.9091 12 16.9091 12C16.9091 12 14.7091 16 12 16Z" stroke="#8271ff" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="#8271ff" stroke-width="1.5"/></svg>'
+          data-hide-icon='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4L20 20" stroke="#8271ff" stroke-width="1.5"/><path d="M14 14.2362C13.4692 14.7112 12.7684 15.0001 12 15.0001C10.3431 15.0001 9 13.657 9 12.0001C9 11.2317 9.28885 10.531 9.76389 10.0001" stroke="#8271ff" stroke-width="1.5"/><path d="M6.5 6.67334C3.952 8.3961 2 12.0001 2 12.0001C2 12.0001 5.63636 19.0001 12 19.0001C13.9134 19.0001 15.584 18.3215 17 17.4264M19.5 15.3267C20.642 14.0519 22 12.0001 22 12.0001C22 12.0001 18.3636 5.00006 12 5.00006C11.1425 5.00006 10.3289 5.11956 9.5666 5.33728" stroke="#8271ff" stroke-width="1.5"/></svg>'
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5C5.63636 5 2 12 2 12C2 12 5.63636 19 12 19C18.3636 19 22 12 22 12C22 12 18.3636 5 12 5ZM12 16C9.29091 16 7.09091 12 7.09091 12C7.09091 12 9.29091 8 12 8C14.7091 8 16.9091 12 16.9091 12C16.9091 12 14.7091 16 12 16Z" stroke="#8271ff" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="#8271ff" stroke-width="1.5"/></svg>
+        </button>
+      </div>
 
-    <button id="savePasswordBtn" class="btn btn-secondary mt-3 d-block mx-auto" onclick="savePassword()">Copy Password</button>
+      <button id="savePasswordBtn" class="btn btn-secondary mt-3 d-block mx-auto" onclick="savePassword()">Copy Password</button>
+    </div>
   </div>
 </body>
 </html>
